@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="main">
+  <div class="nav-bar">
+    <mat-icon aria-hidden="false" aria-label="Example home icon">analytics</mat-icon>
+    <span>GRADING APP</span>
+    <div class="nav-tabs" *ngIf="dataService.getUserType()==='student'">
+      <button mat-button (click)="routeTo('overview')">Overview</button>
+      <button mat-button (click)="routeTo('student-results')">My Results</button>
+      <!-- <button mat-button (click)="routeTo('account')">My Account</button> -->
+      <div class="log-out">
+          <button mat-button (click)="routeTo('')">LogOut</button>
+      </div>
+    </div>
+    <div class="nav-tabs" *ngIf="dataService.getUserType()==='teacher'">
+      <button mat-button (click)="routeTo('teacher-results')">Grade Details</button>
+      <button mat-button (click)="routeTo('statistics')">Statistics</button>
+      <div class="log-out">
+          <button mat-button (click)="routeTo('')">LogOut</button>
+          </div>
+    </div>
+    
+  </div>
+
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

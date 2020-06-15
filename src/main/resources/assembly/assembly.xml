@@ -1,0 +1,36 @@
+<assembly>
+    <!-- Specifies that our binary distribution is a zip package -->
+    <id>dist</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+
+    <fileSets>
+        <fileSet>
+            <directory>${basedir}/config</directory>
+            <outputDirectory>/config</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>${project.build.directory}/${project.artifactId}/lib/</directory>
+            <outputDirectory>lib/</outputDirectory>
+        </fileSet>
+    </fileSets>
+    <files>
+        <file>
+            <source>${basedir}/bin/run.sh</source>
+            <outputDirectory>/</outputDirectory>
+            <filtered>false</filtered>
+        </file>
+        <file>
+            <source>${basedir}/bin/run.bat</source>
+            <outputDirectory>/</outputDirectory>
+            <filtered>false</filtered>
+        </file>
+        <file>
+            <source>${project.build.directory}/grading-applicationr.jar</source>
+            <outputDirectory>lib/</outputDirectory>
+            <filtered>false</filtered>
+        </file>
+
+    </files>
+</assembly>

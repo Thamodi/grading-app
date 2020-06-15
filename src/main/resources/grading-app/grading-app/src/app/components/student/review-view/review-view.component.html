@@ -1,0 +1,20 @@
+<div class="review-view-main">
+        <div class="title-bar">
+          <mat-card>
+            <div class="title">
+              <span>Review Attempt</span>
+            </div>
+          
+              <mat-label>Assignment :  {{assignmentName}} </mat-label>
+              
+              <mat-label>Attempt :  {{attemptId}} </mat-label>
+              
+          </mat-card>
+        </div>
+      
+        <div class="content">
+          <mat-card>
+          <app-table [columns]="columns" [data]="tableDetails"></app-table>
+          </mat-card>
+        </div>
+      </div>

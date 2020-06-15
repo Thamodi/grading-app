@@ -1,0 +1,39 @@
+ <div class="statistics-main">
+        <div class="title-bar">
+          <mat-card>
+            <div class="title">
+              <span>Statistics</span>
+            </div>                
+          </mat-card>
+        </div>
+        <div class="statistics">
+            <mat-card>
+              <div class="stat-group">
+                  <mat-label>{{studentCount}}</mat-label> 
+                  <mat-label>Students</mat-label>                    
+              </div>
+              <div class="stat-group">
+                  <mat-label>{{assignmentCount}}</mat-label> 
+                  <mat-label>Assignments</mat-label>                    
+              </div>
+              <div class="stat-group">
+                  <mat-label>{{averageTimeSpent}}</mat-label> 
+                  <mat-label>Average Time Spent</mat-label>                    
+              </div>                                    
+            </mat-card>
+        </div>
+      
+        <div class="content">
+          <mat-card>
+              <mat-form-field>
+                  <mat-label>Select Assignment</mat-label>
+                  <mat-select [(ngModel)]="assignment" (selectionChange)="onAssignmentChange()">
+                    <mat-option *ngFor="let assignment of assignments" [value]="assignment">
+                      {{assignment.name}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+          <app-table [columns]="columns" [data]="tableDetails" (action)="actionClick($event)"></app-table>
+          </mat-card>
+        </div>
+      </div>
